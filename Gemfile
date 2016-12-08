@@ -29,7 +29,13 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'weather-api'
+
+gem 'awesome_print'
+
 gem 'unirest'
+
+gem 'better_errors'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

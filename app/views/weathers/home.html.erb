@@ -1,39 +1,9 @@
 <div class="container">
-<h2> <center> Weather forecast for <%=@current_location['city']%>, <%=@current_location['region']%> </center></h2>
-<div>
-<h2>
-  <strong>Today's Forecast:</strong>
-  <i><%= @today_forecast["text"]%></i>
-</h2>
-</div>
-
-  <div class="row">
-  <% @forecasts[0..4].each do |forecast|%>
-    <div class="col-md-2">
-      <h3><%= forecast["day"]%></h3>
-      <p><%= forecast["date"]%></p>
-      <p><%= forecast["text"]%></p>
-      <p>High: <%= forecast["high"]%></p>
-      <p>Low: <%= forecast["low"]%></p>
-    </div>
-  <%end%>
-  </div>
-</div>
-
-<div>
-<center>
-Search Your Hometown: 
-
-<%=form_tag "/", method: :get do %>
-
-<%=label_tag :city %>
-<%=text_field_tag :city %>
-
-<%=label_tag :state %>
-<%=text_field_tag :state %>
-
-<%= submit_tag "Search"%>
-<%end%>
+<center> 
+<h2><%=@response.title%></h2>
+<p>Current Forecast: <%=@response.condition.text%></p>
+<p><%=@response.condition.temp%> Degrees</p>
+<p><img src="<%=@response.image.url%>"></p>
 </center>
 </div>
 
